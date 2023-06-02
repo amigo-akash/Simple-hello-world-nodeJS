@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    include python "python3"
   environment {
       // SEMGREP_BASELINE_REF = ""
 
