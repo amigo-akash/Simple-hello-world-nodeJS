@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        python3 'python'
-    }
   environment {
       // SEMGREP_BASELINE_REF = ""
 
