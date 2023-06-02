@@ -11,8 +11,6 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
           steps {
-            sh 'sudo apt install software-properties-common'
-            sh 'sudo add-apt-repository ppa:deadsnakes/ppa'
             sh 'sudo apt install python3.8'
             sh 'python --version'
             sh 'pip3 install semgrep'
