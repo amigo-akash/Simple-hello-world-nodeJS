@@ -12,8 +12,8 @@ pipeline {
       stage('Semgrep-Scan') {
           steps {
             sh 'python3 --version'
-            sh 'python3 -m pip install semgrep'
-             sh 'semgrep --version'
+            sh 'pip3 install semgrep'
+            sh 'semgrep --version'
             sh 'semgrep ci'
           }
       }
