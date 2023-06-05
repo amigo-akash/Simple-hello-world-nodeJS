@@ -13,6 +13,7 @@ pipeline {
           steps {
             sh 'python3 --version'
             sh 'pip3 install semgrep'
+             sh 'semgrep --version'
             sh 'semgrep ci'
           }
       }
