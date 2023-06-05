@@ -13,7 +13,7 @@ pipeline {
           steps {
             sh 'python3 --version'
             sh 'pip3 install semgrep'
-             sh 'which semgrep'
+             sh 'echo $PATH'
             sh 'semgrep ci'
           }
       }
