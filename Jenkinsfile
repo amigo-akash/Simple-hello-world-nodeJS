@@ -21,10 +21,10 @@ pipeline {
 
     stage ('Publish to ECR') {
       steps {
-          sh 'docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-          sh 'docker build -t test-nodejs-image .'
-          sh 'docker tag test-nodejs-image akashacharya/test-nodejs-image' 
-          sh 'docker push akashacharya/test-nodejs-image'
+          sh 'sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          sh 'sudo docker build -t test-nodejs-image .'
+          sh 'sudo docker tag test-nodejs-image akashacharya/test-nodejs-image' 
+          sh 'sudo docker push akashacharya/test-nodejs-image'
          }
        }
     }
