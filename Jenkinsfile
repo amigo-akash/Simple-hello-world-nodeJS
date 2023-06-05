@@ -5,6 +5,7 @@ pipeline {
 
         SEMGREP_APP_TOKEN = credentials('SEMGREP_APP_TOKEN')
         SEMGREP_PR_ID = "${env.CHANGE_ID}"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
 
       //  SEMGREP_TIMEOUT = "300"
     }
@@ -20,7 +21,7 @@ pipeline {
 
     stage ('Publish to ECR') {
       steps {
-          sh 'docker login' 
+          sh 'docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
           sh 'docker build -t test-nodejs-image .'
           sh 'docker tag test-nodejs-image akashacharya/test-nodejs-image' 
           sh 'docker push akashacharya/test-nodejs-image'
