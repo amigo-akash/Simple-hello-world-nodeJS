@@ -13,7 +13,10 @@ pipeline {
           steps {
             sh 'python3 --version'
             sh 'pip3 install semgrep'
+              sh 'export PATH=/var/lib/jenkins/.local/bin:$PATH'
              sh 'echo $PATH'
+              sh 'semgrep --version'
+              sh 'which semgrep'
             sh 'semgrep ci'
           }
       }
