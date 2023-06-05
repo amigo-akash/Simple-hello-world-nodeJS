@@ -15,7 +15,6 @@ pipeline {
             sh 'pip3 install semgrep'
               sh '/var/lib/jenkins/.local/bin/semgrep --version'
             sh '/var/lib/jenkins/.local/bin/semgrep ci'
-              sh 'pwd'
           }
       }
 
