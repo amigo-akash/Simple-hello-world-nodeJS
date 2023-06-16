@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeploy
+  name: deploy
   labels:
     app: node
 spec:
@@ -29,7 +29,7 @@ metadata:
   creationTimestamp: "2020-12-07T08:04:22Z"
   labels:
     app: node
-  name: mydeploy
+  name: deploy
   namespace: default
   resourceVersion: "4706"
   selfLink: /api/v1/namespaces/default/services/mydeploy
