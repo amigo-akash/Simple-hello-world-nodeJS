@@ -44,3 +44,26 @@ spec:
   type: LoadBalancer
 status:
   loadBalancer: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+  labels:
+    app: node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: nginx:1.25.1
+        ports:
+        - containerPort: 80
