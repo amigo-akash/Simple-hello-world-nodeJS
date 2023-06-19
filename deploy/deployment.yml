@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: akashacharya/test-build-nodejs:ae07a351826218c2f487e39ba67655b6076fea3b
+        image: akashacharya/test-build-nodejs:${{ github.sha }}
         ports:
         - containerPort: 8080
 
