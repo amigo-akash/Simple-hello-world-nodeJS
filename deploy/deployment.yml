@@ -41,3 +41,10 @@ spec:
   type: LoadBalancer
 status:
   loadBalancer: {}
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test
