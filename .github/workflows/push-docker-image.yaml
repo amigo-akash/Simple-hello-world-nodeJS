@@ -17,3 +17,12 @@ jobs:
       run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ github.sha }}
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:${{ github.sha }}
+    - name: Commit the image to the gitops repo
+      run: | 
+              curl --location --request POST 'https://api.github.com/repos/Akash221997/gitops-repo-argocd-nodejs/dispatches' \
+              --header 'A: application/vnd.github.v3+json' \
+              --header 'Authorization: Bearer ${{ secrets.TOKEN_ARGO }}' \
+              --header 'Content-Type: application/json' \
+              --data-raw '{"event_type":"update-image" , "client_payload":{ 
+                  "image":"test-build-nodejs:${{ github.sha }}"
+                }}' 
