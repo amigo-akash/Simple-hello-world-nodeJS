@@ -1,2 +1,2 @@
 # Simple-hello-world-nodeJS
-Sample nodejs application deployemnt to K8S cluster
+Sample nodejs application deployment to K8S cluster
