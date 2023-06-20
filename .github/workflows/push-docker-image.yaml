@@ -24,5 +24,5 @@ jobs:
               --header 'Authorization: Bearer ${{ secrets.TOKEN_ARGO }}' \
               --header 'Content-Type: application/json' \
               --data-raw '{"event_type":"update-image" , "client_payload":{ 
-                  "image":"test-build-nodejs:${{ github.sha }}"
+                  "image":"$DOCKER_USER/$REPO_NAME:${{ github.sha }}"
                 }}' 
