@@ -1,6 +1,9 @@
 name: Create/Update services environment variables to AWS SSM
 
 on: 
+  push:
+    branches:
+      - feat/test
   workflow_dispatch:
     inputs:
       env:
