@@ -1,5 +1,5 @@
 name: test-workflow 
-on: [push] # When pushing to any branch then run this action
+#on: [push] # When pushing to any branch then run this action
 # Env variable
 env:
   DOCKER_USER: ${{secrets.DOCKER_USER}}
